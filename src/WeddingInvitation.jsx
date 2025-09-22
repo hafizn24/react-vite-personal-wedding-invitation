@@ -4,14 +4,42 @@ import { Box, Typography, Button, IconButton } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { FaGoogle } from "react-icons/fa";
 import { FaWaze } from "react-icons/fa6";
+import PhoneContact from './PhoneContact';
 
 function WeddingInvitation() {
 
     const lowerRef = useRef(null);
 
     const scrollToLower = () => {
-        lowerRef.current?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-    };
+        const element = lowerRef.current;
+        if (element) {
+            const elementTop = element.offsetTop;
+            const startTop = window.pageYOffset;
+            const distance = elementTop - startTop;
+            const duration = 1500;
+            let startTime = null;
+
+            function animateScroll(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+
+                // Smooth easing function
+                const easeInOutQuad = progress < 0.5
+                    ? 2 * progress * progress
+                    : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+                window.scrollTo(0, startTop + distance * easeInOutQuad);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateScroll);
+                }
+            }
+
+            requestAnimationFrame(animateScroll);
+        }
+    }
+
     return (
         <>
             {/* Upper Section */}
@@ -76,6 +104,7 @@ function WeddingInvitation() {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
+                    backgroundAttachment: "fixed",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -150,6 +179,9 @@ function WeddingInvitation() {
                     >
                         Waze
                     </Button>
+                </Box>
+                <Box sx={{ display: "flex", gap: 2 }}>
+                    <PhoneContact />
                 </Box>
             </Box>
         </>
