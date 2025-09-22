@@ -32,14 +32,14 @@ function PhoneContact() {
                         </Typography>
                         <IconButton
                             color="primary"
-                            onClick={() => handleCall('+60123456789')}
+                            onClick={() => handleCall('+60196062435')}
                             size="small"
                         >
                             <Phone />
                         </IconButton>
                         <IconButton
                             color="success"
-                            onClick={() => handleWhatsApp('+60123456789')}
+                            onClick={() => handleWhatsApp('+60196062435')}
                             size="small"
                         >
                             <WhatsApp />
@@ -51,14 +51,33 @@ function PhoneContact() {
                         </Typography>
                         <IconButton
                             color="primary"
-                            onClick={() => handleCall('+60123456789')}
+                            onClick={() => handleCall('+60195354802')}
                             size="small"
                         >
                             <Phone />
                         </IconButton>
                         <IconButton
                             color="success"
-                            onClick={() => handleWhatsApp('+60123456789')}
+                            onClick={() => handleWhatsApp('+60195354802')}
+                            size="small"
+                        >
+                            <WhatsApp />
+                        </IconButton>
+                    </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
+                        <Typography variant="body1" sx={{ mb: 1 }}>
+                            Nurul Anisha
+                        </Typography>
+                        <IconButton
+                            color="primary"
+                            onClick={() => handleCall('+60175644808')}
+                            size="small"
+                        >
+                            <Phone />
+                        </IconButton>
+                        <IconButton
+                            color="success"
+                            onClick={() => handleWhatsApp('+60175644808')}
                             size="small"
                         >
                             <WhatsApp />
