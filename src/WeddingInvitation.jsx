@@ -121,7 +121,7 @@ function WeddingInvitation() {
                     variant="body1"
                     sx={(theme) => ({
                         ...theme.typography.secondaryFont,
-                        m: 3,
+                        mb: 3,
                     })}
                 >
                     Dewan Desa Keda Singkir, <br />
