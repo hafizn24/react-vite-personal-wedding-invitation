@@ -30,37 +30,38 @@ function WeddingInvitation() {
                 }}
             >
                 <Box>
-                    <Typography variant="h3">
+
+                    <Typography variant="h4">
                         WALIMATUL URUS
                     </Typography>
 
-                    <Box sx={{ mb: 3 }}>
-                        <Typography variant="h5">Natasya</Typography>
-                        <Typography variant="h6">dan</Typography>
-                        <Typography variant="h5">Iskandar</Typography>
+                    <Box sx={{ m: 3 }}>
+                        <Typography variant="h4">Natasya</Typography>
+                        <Typography variant="h5">dan</Typography>
+                        <Typography variant="h4">Iskandar</Typography>
                     </Box>
 
                     <Typography
-                        variant="subtitle1"
+                        variant="body1"
                         sx={(theme) => ({
-                            ...theme.typography.headerFont,
+                            ...theme.typography.secondaryFont,
                             mb: 2,
                         })}
                     >
                         06 Disember 2025
-                    </Typography>   
+                    </Typography>
 
 
-                    <Box sx={{ mb: 3 }}>
-                        <Typography sx={(theme) => theme.typography.bodyFont}>
+                    <Box sx={{ m: 3 }}>
+                        <Typography sx={(theme) => theme.typography.secondaryFont}>
                             Dewan Desa Keda Singkir
                         </Typography>
-                        <Typography sx={(theme) => theme.typography.bodyFont}>
+                        <Typography sx={(theme) => theme.typography.secondaryFont}>
                             06900 Yan, Kedah
                         </Typography>
                     </Box>
 
-                    <IconButton onClick={scrollToLower} color="primary">
+                    <IconButton onClick={scrollToLower}>
                         <ArrowDownwardIcon fontSize="large" />
                     </IconButton>
                 </Box>
@@ -83,27 +84,46 @@ function WeddingInvitation() {
                     px: 2,
                 }}
             >
-                <Typography variant="h5" sx={{ mb: 1 }}>
+                <Typography variant="h5" sx={{ m: 1 }}>
                     Mansor bin Din & Sofiah binti Ahmad
                 </Typography>
-                <Typography variant="body1" sx={{ mb: 2 }}>
+                <Typography
+                    variant="body1"
+                    sx={(theme) => ({
+                        ...theme.typography.secondaryFont,
+                        m: 3,
+                    })}
+                >
                     Dengan penuh kesyukuran ke hadrat ilahi, Kami menjemput ke majlis
                     perkahwinan puteri kami yang dikasihi
                 </Typography>
 
+
                 <Typography variant="h5">Nurul Natasya Binti Mansor</Typography>
-                <Typography variant="h6">Dengan Pasangannya</Typography>
+                <Typography variant="h7">Dengan Pasangannya</Typography>
                 <Typography variant="h5" sx={{ mb: 2 }}>
                     Muhammad Iskandar Bin Hassan
                 </Typography>
 
-                <Typography variant="body1" sx={{ mb: 2 }}>
+                <Typography
+                    variant="body1"
+                    sx={(theme) => ({
+                        ...theme.typography.secondaryFont,
+                        m: 2,
+                    })}
+                >
                     Sabtu, 6 Disember 2025 <br />
                     12:00 Tengah hari - 5:00 Petang
                 </Typography>
 
                 <Typography variant="h6">Bertempat di</Typography>
-                <Typography variant="body1" sx={{ mb: 3 }}>
+                <Typography
+                    variant="body1"
+                    sx={(theme) => ({
+                        ...theme.typography.secondaryFont,
+                        m: 3,
+                    })}
+                >
                     Dewan Desa Keda Singkir, <br />
                     06900 Yan, Kedah
                 </Typography>
@@ -115,6 +135,7 @@ function WeddingInvitation() {
                         onClick={() =>
                             window.open("https://maps.app.goo.gl/6RPhepYDJqBr3jVs8", "_blank")
                         }
+                        sx={(theme) => theme.typography.sansSerifFont}
                     >
                         Google Maps
                     </Button>
@@ -125,6 +146,7 @@ function WeddingInvitation() {
                         onClick={() =>
                             window.open("https://waze.com/ul/hw1p2s3y0k", "_blank")
                         }
+                        sx={(theme) => theme.typography.sansSerifFont}
                     >
                         Waze
                     </Button>

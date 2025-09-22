@@ -11,14 +11,14 @@ function App() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: 'Raleway, sans-serif',
-      headerFont: {
-        fontFamily: 'Playfair Display, serif',
+      fontFamily: '"Quintessential", serif',
+      secondaryFont: {
+        fontFamily: '"Domine", serif',
         fontSize: '1rem',
       },
-      bodyFont: {
-        fontFamily: 'Raleway, sans-serif',
-        fontSize: '0.8rem',
+      sansSerifFont: {
+        fontFamily: '"Roboto", sans-serif',
+        fontSize: '1rem',
       },
     },
   });
