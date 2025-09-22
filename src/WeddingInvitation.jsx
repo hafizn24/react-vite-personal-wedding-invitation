@@ -64,7 +64,7 @@ function WeddingInvitation() {
                     </Typography>
 
                     <Box sx={{ m: 3 }}>
-                        <Typography variant="h4">Natasya</Typography>
+                        <Typography variant="h4">Natasyaaa</Typography>
                         <Typography variant="h5">dan</Typography>
                         <Typography variant="h4">Iskandar</Typography>
                     </Box>
