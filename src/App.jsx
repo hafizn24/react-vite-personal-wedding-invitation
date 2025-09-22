@@ -7,11 +7,13 @@ import WeddingInvitation from './WeddingInvitation';
 import { ThemeProvider, CssBaseline, } from '@mui/material';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const theme = createTheme({
     typography: {
       fontFamily: '"Quintessential", serif',
+      allVariants: {
+        color: 'rgba(45, 46, 12, 0.87)',
+      },
       secondaryFont: {
         fontFamily: '"Domine", serif',
         fontSize: '1rem',

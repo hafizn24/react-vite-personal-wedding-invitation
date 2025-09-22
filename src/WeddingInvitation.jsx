@@ -10,7 +10,7 @@ function WeddingInvitation() {
     const lowerRef = useRef(null);
 
     const scrollToLower = () => {
-        lowerRef.current?.scrollIntoView({ behavior: "smooth" });
+        lowerRef.current?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
     };
     return (
         <>
