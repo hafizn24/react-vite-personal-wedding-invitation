@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, IconButton } from "@mui/material";
+import { Card, CardContent, Typography, Box, IconButton, Divider } from "@mui/material";
 import { Phone, WhatsApp } from "@mui/icons-material";
 
 function PhoneContact() {
@@ -10,79 +10,146 @@ function PhoneContact() {
         window.open(`https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}`);
     };
 
+    const contacts = [
+        {
+            name: 'Mansor',
+            title: 'Ayah',
+            phone: '+60196062435'
+        },
+        {
+            name: 'Sofiah',
+            title: 'Ibu',
+            phone: '+60195354802'
+        },
+        {
+            name: 'Anisha',
+            title: 'Adik',
+            phone: '+60175644808'
+        }
+    ];
+
     return (
         <Card
             sx={{
-                minWidth: 300,
+                width: '100%',
+                maxWidth: 320,
                 margin: '20px auto',
-                borderRadius: 3,
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                backgroundColor: 'rgba(247, 247, 247, 0.8)',
+                borderRadius: 2,
+                background: 'rgba(255, 255, 255, 0.08)',
+                backdropFilter: 'blur(15px)',
+                boxShadow: 'none',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                    background: 'rgba(255, 255, 255, 0.12)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)'
+                }
             }}
+            elevation={0}
         >
-            <CardContent sx={{ textAlign: 'center', py: 2 }}>
-                <Typography variant="h6" sx={{ mb: 1 }}>
+            <CardContent sx={{ p: 2.5 }}>
+
+
+                <Typography 
+                    variant="h6" 
+                    sx={{ 
+                        textAlign: 'center',
+                        color: '#0a1526',
+                        fontFamily: '"Playfair Display", serif',
+                        fontWeight: 700,
+                        letterSpacing: '2.5px',
+                        mb: 2.5,
+                        fontSize: '0.95rem',
+                        textTransform: 'uppercase'
+                    }}
+                >
                     Hubungi
                 </Typography>
 
-                <Box sx={{ mb: 2 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
-                        <Typography variant="body1" sx={{ mb: 1 }}>
-                            Mansor bin Din
-                        </Typography>
-                        <IconButton
-                            color="primary"
-                            onClick={() => handleCall('+60196062435')}
-                            size="small"
-                        >
-                            <Phone />
-                        </IconButton>
-                        <IconButton
-                            color="success"
-                            onClick={() => handleWhatsApp('+60196062435')}
-                            size="small"
-                        >
-                            <WhatsApp />
-                        </IconButton>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
-                        <Typography variant="body1" sx={{ mb: 1 }}>
-                            Sofiah binti Ahmad
-                        </Typography>
-                        <IconButton
-                            color="primary"
-                            onClick={() => handleCall('+60195354802')}
-                            size="small"
-                        >
-                            <Phone />
-                        </IconButton>
-                        <IconButton
-                            color="success"
-                            onClick={() => handleWhatsApp('+60195354802')}
-                            size="small"
-                        >
-                            <WhatsApp />
-                        </IconButton>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
-                        <Typography variant="body1" sx={{ mb: 1 }}>
-                            Nurul Anisha
-                        </Typography>
-                        <IconButton
-                            color="primary"
-                            onClick={() => handleCall('+60175644808')}
-                            size="small"
-                        >
-                            <Phone />
-                        </IconButton>
-                        <IconButton
-                            color="success"
-                            onClick={() => handleWhatsApp('+60175644808')}
-                            size="small"
-                        >
-                            <WhatsApp />
-                        </IconButton>
-                    </Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+                    {contacts.map((contact, index) => (
+                        <Box key={contact.phone}>
+                            <Box 
+                                sx={{ 
+                                    display: 'flex', 
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    gap: 2
+                                }}
+                            >
+                                <Box sx={{ flex: 1 }}>
+                                    <Typography 
+                                        sx={{ 
+                                            fontFamily: '"Cormorant Garamond", serif',
+                                            fontWeight: 700,
+                                            color: '#142847',
+                                            fontSize: '1.1rem',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 1
+                                        }}
+                                    >
+                                        {contact.name}
+                                        <Typography 
+                                            component="span"
+                                            sx={{ 
+                                                fontFamily: '"Cormorant Garamond", serif',
+                                                color: '#4a5568',
+                                                fontSize: '0.9rem',
+                                                fontWeight: 500,
+                                                fontStyle: 'italic'
+                                            }}
+                                        >
+                                            ({contact.title})
+                                        </Typography>
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ display: 'flex', gap: 1 }}>
+                                    <IconButton
+                                        onClick={() => handleCall(contact.phone)}
+                                        sx={{
+                                            color: '#2d4a6d',
+                                            border: '1px solid rgba(45, 74, 109, 0.3)',
+                                            padding: '6px',
+                                            transition: 'all 0.2s ease',
+                                            '&:hover': {
+                                                backgroundColor: 'rgba(45, 74, 109, 0.04)',
+                                                border: '1px solid rgba(45, 74, 109, 0.5)'
+                                            }
+                                        }}
+                                        size="small"
+                                    >
+                                        <Phone sx={{ fontSize: '1rem' }} />
+                                    </IconButton>
+                                    <IconButton
+                                        onClick={() => handleWhatsApp(contact.phone)}
+                                        sx={{
+                                            color: '#075E54',
+                                            border: '1px solid rgba(7, 94, 84, 0.3)',
+                                            padding: '6px',
+                                            transition: 'all 0.2s ease',
+                                            '&:hover': {
+                                                backgroundColor: 'rgba(7, 94, 84, 0.04)',
+                                                border: '1px solid rgba(7, 94, 84, 0.5)'
+                                            }
+                                        }}
+                                        size="small"
+                                    >
+                                        <WhatsApp sx={{ fontSize: '1rem' }} />
+                                    </IconButton>
+                                </Box>
+                            </Box>
+                            {index < contacts.length - 1 && (
+                                <Divider 
+                                    sx={{ 
+                                        mt: 2,
+                                        opacity: 0.1,
+                                        borderColor: 'rgba(45, 74, 109, 0.3)'
+                                    }} 
+                                />
+                            )}
+                        </Box>
+                    ))}
                 </Box>
             </CardContent>
         </Card>
