@@ -22,6 +22,21 @@ function App() {
         fontFamily: '"Roboto", sans-serif',
         fontSize: '1rem',
       },
+      serifFont: {
+        fontFamily: '"Playfair Display", serif',
+        fontSize: '1rem',
+        fontWeight: 500
+      },
+      altSerifFont: {
+        fontFamily: '"Cormorant Garamond", serif',
+        fontSize: '1rem',
+        fontWeight: 500
+      },
+      cursiveFont: {
+        fontFamily: '"Parisienne", cursive',
+        fontSize: '1rem',
+        fontWeight: 400
+      }
     },
   });
 
